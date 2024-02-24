@@ -1,0 +1,26 @@
+{
+  "name": "Moray Dev Environment",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "devcontainer-compose.yml"
+  ],
+  "service": "web",
+  "forwardPorts": [],
+  "runServices": [
+    "db"
+  ],
+  "workspaceFolder": "/app",
+  "overrideCommand": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.vscode-pylance",
+        "ms-python.isort",
+        "GitLab.gitlab-workflow",
+        "eamodio.gitlens",
+        "tombonnike.vscode-status-bar-format-toggle"
+      ]
+    }
+  },
+  "postStartCommand": "bash .devcontainer/setup.sh"
+}
