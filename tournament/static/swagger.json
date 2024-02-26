@@ -1,0 +1,225 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Moray Tournament API",
+      "version": "1.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8000/api/v1"
+      }
+    ],
+    "paths": {
+      "/tournament/": {
+        "post": {
+          "summary": "Create Tournament",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/competitor/": {
+        "post": {
+          "summary": "Create Competitor",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/tournament/{tournament_id}/competitor/": {
+        "post": {
+          "summary": "Register Competitors for Tournament",
+          "parameters": [
+            {
+              "name": "tournament_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "competitor_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Competitors registered successfully"
+            }
+          }
+        }
+      },
+      "/tournament/{tournament_id}/create-first-round-matches/": {
+        "post": {
+          "summary": "Create First Round Matches for Tournament",
+          "parameters": [
+            {
+              "name": "tournament_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "First round matches created successfully"
+            }
+          }
+        }
+      },
+      "/tournament/{tournament_id}/create-next-round-matches/": {
+        "post": {
+          "summary": "Create Next Round Matches for Tournament",
+          "parameters": [
+            {
+              "name": "tournament_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Next round matches created successfully"
+            }
+          }
+        }
+      },
+      "/tournament/{tournament_id}/match/{match_id}/": {
+        "post": {
+          "summary": "Set Match Result",
+          "parameters": [
+            {
+              "name": "tournament_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "match_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "winner_id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Match result set successfully"
+            }
+          }
+        }
+      },
+      "/tournament/{tournament_id}/result": {
+        "get": {
+          "summary": "Get Top Four Participants",
+          "parameters": [
+            {
+              "name": "tournament_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Top four participants retrieved successfully"
+            }
+          }
+        }
+      },
+      "/tournament/{tournament_id}/match": {
+        "get": {
+          "summary": "Get Matches for Tournament",
+          "parameters": [
+            {
+              "name": "tournament_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Matches retrieved successfully"
+            }
+          }
+        }
+      }
+    }
+  }
