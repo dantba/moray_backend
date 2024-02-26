@@ -9,7 +9,7 @@ Moray Backend é uma aplicação baseada em Django que fornece um pequeno sistem
 - Visualizar e gerenciar partidas de torneios.
 - Registrar resultados das partidas.
 - Visualizar os top 4 competidores em um torneio.
-- Disponibilizar documentação Swagger em `/swagger`.
+- Disponibilizar documentação Swagger em `api/v1/swagger-ui`.
 
 
 ## Requisitos
@@ -127,7 +127,7 @@ Agora você pode desenvolver e executar o projeto de maneira isolada usando o Do
 
 ## Documentação da API
 
-- A documentação da API pode ser acessada em `http://127.0.0.1:8000/api/v1/swagger-ui/.
+- A documentação da API pode ser acessada em `http://127.0.0.1:8000/api/v1/swagger-ui/`.
 - Para acessar o swagger é necessário coletar os arquivos estáticos do django antes, para tal, rode:
 ```bash
     python manage.py collectstatic
