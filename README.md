@@ -137,3 +137,9 @@ Agora você pode desenvolver e executar o projeto de maneira isolada usando o Do
 ## Diagrama dos Modelos
 
 ![Diagrama dos Modelos](image.png)
+
+## Testes
+Os testes foram escritos em pytest, e para executá-los, basta rodar:
+```bash
+    pytest
+```
