@@ -99,18 +99,18 @@ def final_matches(top_four_tournament):
     ]
     final = baker.make(
         "tournament.Match",
-        tournament=tournament,
-        competitor_1=competitor_pairs[0],
-        competitor_2=competitor_pairs[1],
-        winner=competitor_pairs[1],
+        tournament=top_four_tournament,
+        competitor_1=competitor_pairs[0][0],
+        competitor_2=competitor_pairs[0][1],
+        winner=competitor_pairs[0][0],
         side="F",
     )
     third = baker.make(
         "tournament.Match",
-        tournament=tournament,
-        competitor_1=competitor_pairs[2],
-        competitor_2=competitor_pairs[3],
-        winner=competitor_pairs[3],
+        tournament=top_four_tournament,
+        competitor_1=competitor_pairs[1][0],
+        competitor_2=competitor_pairs[1][1],
+        winner=competitor_pairs[1][1],
         side="T",
     )
     return [final, third]
