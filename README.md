@@ -108,9 +108,6 @@ Se desejar contribuir com este projeto, siga estes passos:
 4. Faça o push para a branch: `git push origin nome-da-funcionalidade`.
 5. Submeta um pull request com suas alterações.
 
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Ambiente de Desenvolvimento
 
